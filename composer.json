@@ -1,0 +1,19 @@
+{
+    "name": "bytegs/storage",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Kruemel",
+            "email": "kruemel@byte.gs"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "shuber/curl":"dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Byte\\Auth\\": ""
+        }
+    }
+}
