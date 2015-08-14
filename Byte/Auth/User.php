@@ -60,4 +60,10 @@ class User
     $ret = json_decode($res->body, true);
     return $ret;
   }
+  public function pwResetHash($id)
+  {
+    $res = $this->curl->post($this->url."/user/".(int)$id."/pwReset");
+    $ret = json_decode($res->body, true);
+    return $ret;
+  }
 }
