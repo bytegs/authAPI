@@ -2,9 +2,15 @@
 namespace Byte\Auth;
 class User
 {
-  public function __construct($apiKey)
+  public function __construct($apiKey, $url = NULL)
   {
-    $this->url = "http://auth.byte.gs/api";
+    if($url==NULL)
+    {
+      $this->url = "http://auth.byte.gs/api";
+    }
+    else {
+      $this->url = $url;
+    }
     $this->apiKey = $apiKey;
     $this->curl = new \Curl;
     $this->curl->headers["X-Auth-Token"] = $apiKey;
