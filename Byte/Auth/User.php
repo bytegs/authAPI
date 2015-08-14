@@ -56,7 +56,7 @@ class User
   }
   public function update($id, $data = [])
   {
-    $res = $this->curl->post($this->url."/user/login", $data);
+    $res = $this->curl->post($this->url."/user/".(int)$id, $data);
     $ret = json_decode($res->body, true);
     return $ret;
   }
