@@ -54,4 +54,10 @@ class User
     $ret = json_decode($res->body, true);
     return $ret;
   }
+  public function update($id, $data = [])
+  {
+    $res = $this->curl->post($this->url."/user/login", $data);
+    $ret = json_decode($res->body, true);
+    return $ret;
+  }
 }
