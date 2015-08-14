@@ -15,6 +15,15 @@ class User
     $this->curl = new \Curl;
     $this->curl->headers["X-Auth-Token"] = $apiKey;
   }
+  public function ping()
+  {
+    $res = $this->curl->get($this->url."/ping");
+    if($res->body=="pong")
+    {
+      return true;
+    }
+    return false;
+  }
   public function register($mail, $password)
   {
     $res = $this->curl->post($this->url."/user/", ["mail"=>$mail, "password"=>$password]);
