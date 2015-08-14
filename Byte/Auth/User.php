@@ -66,4 +66,10 @@ class User
     $ret = json_decode($res->body, true);
     return $ret;
   }
+  public function count()
+  {
+    $res = $this->curl->get($this->url."/user/count");
+    $ret = json_decode($res->body, true);
+    return $ret;
+  }
 }
